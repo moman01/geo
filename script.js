@@ -1,3 +1,19 @@
+//Card Hover
+
+var colors = ["#F44336", "#9C27B0", "#3F51B5", "#009688", "#FFEB3B", "#FF5722"];
+var cards = document.querySelectorAll(".card");
+for (var i = 0; i < cards.length; i++) {
+  cards[i].addEventListener("mouseenter", function () {
+    var randomIndex = Math.floor(Math.random() * colors.length);
+    this.style.backgroundColor = colors[randomIndex];
+  });
+  cards[i].addEventListener("mouseleave", function () {
+    this.style.backgroundColor = "";
+  });
+}
+
+
+
 let serial = 0;
 
 document.getElementById("tri-btn").addEventListener("click", function () {
@@ -41,7 +57,7 @@ document.getElementById("par-btn").addEventListener('click',function(){
 
 
    // Making Function 
-function tableData(shapeName,value1, value2,area){
+function tableData(shapeName, value1, value2, area){
   const container = document.getElementById("table-container");
   const tableRow = document.createElement("tr");
   tableRow.innerHTML = `
